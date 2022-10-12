@@ -166,7 +166,7 @@
                     score++
                 } else {
                     document.getElementById(ids[position]).setAttribute("src","Empty_Treasure_Chest.jpg")
-                chestCount += 1}
+                chestCount ++}
                 document.getElementById("chests").innerHTML = "Number of chests checked is " + chestCount;
                 document.getElementById("score").innerHTML = "Score is " + score
                 lastCheck = position;}
@@ -176,7 +176,7 @@
                     treasureLocation = Math.floor(Math.random() * 25) }
                 chestCount = 0
                 score = 0
-                for(let i = 0; i < 24; i++) {
+                for(let i = 0; i < 25; i++) {
                     if(i != 12) {
                         document.getElementById(ids[i]).src = "Treasure chest3.png"}}}
                 function help() {
