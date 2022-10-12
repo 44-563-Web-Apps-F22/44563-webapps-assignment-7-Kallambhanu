@@ -159,7 +159,7 @@
             var chestCount = 0
             var score = 0
             var lastCheck = 12
-            var treasureLocation = 18
+            var treasureLocation = Math.floor(Math.random() * 25)
             function check(position) {
                 if(position == treasureLocation) {
                     document.getElementById(ids[position]).setAttribute("src","Treasure chest.png")
@@ -170,6 +170,15 @@
                 document.getElementById("chests").innerHTML = "Number of chests checked is " + chestCount;
                 document.getElementById("score").innerHTML = "Score is " + score
                 lastCheck = position;}
+                function resetGame() {
+                treasureLocation = Math.floor(Math.random() * 25)
+                while(treasureLocation == 12) {
+                    treasureLocation = Math.floor(Math.random() * 25) }
+                chestCount = 0
+                score = 0
+                for(let i = 0; i < 24; i++) {
+                    if(i != 12) {
+                        document.getElementById(ids[i]).src = "Treasure chest3.png"}}}
                 function help() {
                  let lastRow=parseInt((lastCheck/5),10)
                  let treasureRow=parseInt((treasureLocation/5),10)
