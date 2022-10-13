@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="container text-center">
-                <button class="btn btn-secondary" type="submit" onclick="resetGame()">resetGame</button>
+                <button class="btn btn-secondary" type="submit" onclick="resetGame()">Reset Game</button>
                 </div>
 
             <div class="container">
@@ -173,6 +173,7 @@
                 chestCount ++}
                 document.getElementById("chests").innerHTML = "Number of chests checked is " + chestCount;
                 document.getElementById("score").innerHTML = "Score is " + score
+                
                 lastCheck = position;}
                 function resetGame() {
                 treasureLocation = Math.floor(Math.random() * 25)
@@ -180,8 +181,10 @@
                     treasureLocation = Math.floor(Math.random() * 25) }
                 chestCount = 0
                 score = 0
+                let result=" "
                 document.getElementById("score").innerHTML = "score is " + score;
                 document.getElementById("chests").innerHTML = "chestCount " + chestCount;
+                document.getElementById("help").innerText=result
                 for(let i = 0; i < 25; i++) {
                     if(i != 12) {
                         document.getElementById(ids[i]).src = "Treasure chest3.png"}}}
