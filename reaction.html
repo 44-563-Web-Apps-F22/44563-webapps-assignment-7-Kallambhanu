@@ -16,7 +16,7 @@
         <div class="col-md">
             <p id="target">Your time</p>
         </div>
-        <div class="col-md">
+        <div class="col-md text-left">
             <p id="countdown">Count</p>
         </div>
     </div>
@@ -27,18 +27,18 @@
 </div>
 
 <script>
-    var myTime = Date.now()
-
-    function recordReact() {
-        myTime = Date.now()
-        console.log(myTime)
+    var myTime = undefined;
+    var random = (Math.floor(Math.random()*11)+2)
+    function recordReact(){
+      myTime = undefined;
+      myTime = Date.now();
+      console.log(myTime);
     }
-
     function startTime() {
                 for(let i = 0; i < 4; i++) {
                     setTimeout(() => {
-                        document.getElementById("countdown").innerHTML = i
-                    }, ((3-i)*1000));
+                        document.getElementById("countdown").innerHTML = i},(random-i)*1000);
+                    
                 }
                 
                 setTimeout(() => {
@@ -48,7 +48,7 @@
                         let buttonTime = Date.now()
                         document.getElementById("target").innerHTML = "Time was " + (buttonTime - myTime)
                     }
-                }, 3000);
+                }, random*1000);
             }
         </script>
 </body>
